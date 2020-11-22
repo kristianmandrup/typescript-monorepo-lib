@@ -22,7 +22,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@stereobooster/*": ["packages/*/src"]
+      "@my-lib/*": ["packages/*/src"]
     },
     // https://github.com/RyanCavanaugh/learn-a/#tsconfigsettingsjson
     "composite": true,

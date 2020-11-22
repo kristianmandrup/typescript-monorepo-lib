@@ -1,11 +1,11 @@
 {
-  "name": "@stereobooster/d",
+  "name": "@my-lib/d",
   "version": "0.0.1",
   "description": "d",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "repository": "",
-  "author": "stereobooster <stereobooster@gmail.com>",
+  "author": "my-org <my-org@gmail.com>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

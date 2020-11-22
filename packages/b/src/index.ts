@@ -1,1 +1,1 @@
-export * from "./B";
+export const x = 2;

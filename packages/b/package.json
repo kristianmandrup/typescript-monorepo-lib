@@ -1,11 +1,11 @@
 {
-  "name": "@stereobooster/b",
+  "name": "@my-lib/b",
   "version": "0.0.1",
   "description": "",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "repository": "",
-  "author": "stereobooster <stereobooster@gmail.com>",
+  "author": "my-org <my-org@gmail.com>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -15,12 +15,10 @@
   ],
   "dependencies": {},
   "peerDependencies": {
-    "@stereobooster/d": "0.0.1",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "@my-lib/d": "0.0.1"
   },
   "devDependencies": {
-    "@stereobooster/d": "*"
+    "@my-lib/d": "*"
   },
   "scripts": {
     "start": "tsc -w --preserveWatchOutput"

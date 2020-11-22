@@ -1,12 +1,10 @@
-# Typescript monorepo for React project
+# Typescript monorepo for Libraries
 
 ## What I want to achieve?
 
 - [Monorepo](https://www.atlassian.com/git/tutorials/monorepos) project, to be able to comfortably to develop several packages, which can be used separately but as well together
 - Typescript
-- React
 - Testing library. I want to start with Jest, but as well we can choose something else
-- Storybook (or similar tool) for React components development and showcasing
 - (nice to have, but optional) ESlint with [eslint-config-react-app](https://www.npmjs.com/package/eslint-config-react-app)
 - (nice to have, but optional) Rollup to bundle and minify
 - (nice to have, but optional) pre-commit hooks with prettier
@@ -19,11 +17,6 @@
 - [`stories`](packages/stories) - showcase of `b` and `c` package's compnents as well used for development (initial plan, can change later)
 
 ## Tools
-
-**⚠️⚠️⚠️ Info in this section is stale ⚠️⚠️⚠️**:
-  - **Problem 1** is resolved in PR [#2](https://github.com/stereobooster/typescript-monorepo/pull/2)
-  - **Problem 2** is resolved in PR [#5](https://github.com/stereobooster/typescript-monorepo/pull/5)
-  - **Problem 4** is resolved in PR [#4](https://github.com/stereobooster/typescript-monorepo/pull/4)
 
 ### yarn
 
@@ -66,7 +59,7 @@ Create `tsconfig.base.json`. This is what you need to add to enable monorepo:
     "declarationMap": true,
     "baseUrl": ".",
     "paths": {
-      "@stereobooster/*": ["packages/*/src"]
+      "@my-lib/*": ["packages/*/src"]
     }
   }
 }
@@ -94,10 +87,10 @@ In `package.json` for packages `b` and `c` add:
 
 ```json
 "peerDependencies": {
-  "@stereobooster/d": "0.0.1"
+  "@my-lib/d": "0.0.1"
 },
 "devDependencies": {
-  "@stereobooster/d": "*"
+  "@my-lib/d": "*"
 }
 ```
 
@@ -107,7 +100,7 @@ Now we can build projects. Add to root `package.json`:
 
 ```json
 "scripts": {
-  "build": "lerna run build --stream --scope=@stereobooster/{d,b,c}"
+  "build": "lerna run build --stream --scope=@my-lib/{d,b,c}"
 }
 ```
 
@@ -166,7 +159,7 @@ to enable monorepo:
 
 ```json
 "moduleNameMapper": {
-  "@stereobooster/(.*)$": "<rootDir>/packages/$1"
+  "@my-lib/(.*)$": "<rootDir>/packages/$1"
 }
 ```
 
@@ -204,9 +197,9 @@ We will need the following things in `package.json`:
   "build": "build-storybook -o dist"
 },
 "dependencies": {
-  "@stereobooster/d": "*",
-  "@stereobooster/b": "*",
-  "@stereobooster/c": "*"
+  "@my-lib/d": "*",
+  "@my-lib/b": "*",
+  "@my-lib/c": "*"
 },
 "devDependencies": {
   "@babel/core": "7.4.3",

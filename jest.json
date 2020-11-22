@@ -11,6 +11,6 @@
     }
   },
   "moduleNameMapper": {
-    "@stereobooster/(.*)$": "<rootDir>/packages/$1"
+    "@my-lib/(.*)$": "<rootDir>/packages/$1"
   }
 }
